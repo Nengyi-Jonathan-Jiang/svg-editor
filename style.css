@@ -1,0 +1,129 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+div#text-container{
+	width: 50vw;
+	height: 100vh;
+	position: absolute;
+}
+
+div#output-container{
+	width: 50vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 50vw;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAMAAABFaP0WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExUReXl5ff39yrUv8sAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAOSURBVBhXY2BgZGBkAAAADAADTkuMOQAAAABJRU5ErkJggg==);
+	background-size: 32px 32px;
+	image-rendering: pixelated;
+	
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: start;
+	justify-content: start;
+}
+
+div#output-container>svg{
+	--ww : min(100%, var(--w));
+	--s : (var(--ww) / var(--w));
+	--hh : calc(var(--s) * var(--h));
+	
+	width : var(--ww);
+	max-width: var(--ww);
+	height: var(--hh);
+	max-height: var(--hh);
+	
+	outline: 1px dashed gray;
+	flex-grow: 0;
+	flex-shrink: 1;
+	margin: 5px;
+}
+
+div#highlighted {
+	background-color: rgb(44, 43, 40);
+	color: rgb(144, 143, 140);
+}
+
+textarea, div#highlighted {
+	white-space: pre;
+	font-size: x-large;
+	padding: 11pt 0 11pt 0;
+	font-family: monospace;
+	width: calc(100% - 4px);
+	height: calc(100% - (4px + (2 * 11pt)));
+	left: 2px;
+	top: 2px;
+	overflow: auto;
+	position: absolute;
+}
+
+body {
+	background-color: black;
+}
+
+::-webkit-scrollbar {
+	display: none
+}
+
+textarea {
+	border: none;
+	resize: none;
+	color: transparent;
+	background-color: transparent;
+	caret-color: white;
+	outline: none;
+}
+
+textarea::selection {
+	color: transparent;
+	background: #FFF4;
+}
+
+span.number-literal {
+	color: #aa44ff;
+}
+
+span.control-keyword {
+	color: #ff5566;
+}
+
+span.string-literal {
+	color: #ffff88;
+}
+
+span.type-name {
+	color: #77ddff;
+}
+
+span.keyword {
+	color: #dd77dd;
+}
+
+span.operator {
+	color: #777;
+}
+
+span.unknown {
+	color: white;
+}
+
+
+#save-img-btn {top: 44px}
+#save-svg-btn {top: 10px}
+
+#save-img-btn,
+#save-svg-btn {
+	position: absolute;
+	right: 10px;
+	font-size: 14pt;
+	width: 6em;
+	height: 1.5em;
+	border-radius: .75em;
+	border-width: 1px;
+	background: #08F;
+	color: white;
+	border-color: #028;
+}

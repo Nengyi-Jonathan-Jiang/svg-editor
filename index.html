@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>svg editor</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script>
+		const TAGS = [
+			"g", "group", "path", "ellipse", "circle", "line",
+			"rect", "svg", "polygon", "image", "use",
+			"defs", "text",
+		];
+		const PROPERTIES = [
+			"width", "height",
+			"x", "y", "x1", "y1", "x2", "y2", "cx", "cy",
+			"r", "rx", "ry",
+			"style",
+			"stroke-width", "stroke-linecap", "stroke", "fill",
+			"points",
+			"d",
+			"id", "xlink:href", "href", "src",
+			"opacity", "transform",
+			"viewbox",
+		];
+	</script>
+	<script src="parser.js"></script>
+	<script src="eval.js"></script>
+	<script src="highlight.js"></script>
+</head>
+
+<body>
+	<div id="text-container">
+		<div id="text">
+			<div id="highlighted"></div>
+			<textarea id="input" type="text" spellcheck="false"></textarea>
+		</div>
+	</div>
+	<div id="output-container">
+	</div>
+	<button id="save-svg-btn">Save SVG</button>
+	<button id="save-img-btn">Save PNG</button>
+	<script src="script.js"></script>
+</body>
+
+</html>
